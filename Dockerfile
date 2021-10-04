@@ -4,6 +4,7 @@ WORKDIR /home/django-app
 
 # install dependencies
 COPY . /home/django-app
+ENV PYTHONUNBUFFERED=1
 RUN pip install --upgrade pip 
 RUN pip install -r requirements.txt
 
