@@ -19,7 +19,7 @@ pipeline {
         }  
         stage ('deploy'){
             steps{
-                withCredentials([usernamePassword(credentialsId:"dockerhub",usernameVariable:"username",passwordVariable:"pass")]){
+                withCredentials([usernamePassword(credentialsId:"dockerHub",usernameVariable:"username",passwordVariable:"passwd")]){
                 
                 sh 'docker run -p 8000:8000 -d ${username}/django:v1'
                 }
