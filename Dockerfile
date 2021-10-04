@@ -1,5 +1,4 @@
-
-FROM python:3.6
+FROM python
 WORKDIR /home/django-app
 
 
