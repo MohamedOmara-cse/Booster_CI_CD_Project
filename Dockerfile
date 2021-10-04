@@ -9,8 +9,8 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Django app Migration 
-RUN python:3.6 manage.py makemigrations
-RUN python:3.6 manage.py migrate
+RUN python3.6 manage.py makemigrations
+RUN python3.6 manage.py migrate
 
 EXPOSE 8000
 RUN  python:3.6 manage.py runserver 0.0.0.0:8000
