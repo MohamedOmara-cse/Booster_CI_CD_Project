@@ -1,5 +1,5 @@
 pipeline {
-  agent {'aws'}
+  agent {label 'aws'}
     stages {
         stage('Preparation') {
             steps {
