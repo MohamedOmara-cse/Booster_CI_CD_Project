@@ -4,7 +4,7 @@ WORKDIR /home/django-app
 
 
 # install dependencies
-
+COPY ./requirements.txt /home/django-app
 RUN pip install --upgrade pip 
 RUN pip install -r requirements.txt
 
