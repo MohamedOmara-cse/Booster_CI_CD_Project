@@ -21,7 +21,7 @@ pipeline {
             steps{
                 withCredentials([usernamePassword(credentialsId:"dockerHub",usernameVariable:"username",passwordVariable:"passwd")]){
                 
-                sh 'docker run -p 8000:8001 -d ${username}/django:v1'
+                sh 'docker run -p 8001:8000 -d ${username}/django:v1'
                 }
             }
            // Send notifications
