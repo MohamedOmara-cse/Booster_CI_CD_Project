@@ -11,9 +11,9 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 withCredentials([usernamePassword(credentialsId:"dockerHub",usernameVariable:"username",passwordVariable:"passwd")]){
-                sh 'docker build . -t ${username}/django:v1'
+                sh 'docker build . -t ${username}/django-dev:v1'
                 sh 'docker login -u ${username} -p ${passwd}'
-                sh 'docker push ${username}/django:v1'
+                sh 'docker push ${username}/django-dev:v1'
                 }
             }
         }  
@@ -21,7 +21,7 @@ pipeline {
             steps{
                 withCredentials([usernamePassword(credentialsId:"dockerHub",usernameVariable:"username",passwordVariable:"passwd")]){
                 
-                sh 'docker run -p 8001:8000 -d ${username}/django:v1'
+                sh 'docker run -p 8001:8000 -d ${username}/django-dev:v1'
                 }
             }
            // Send notifications
