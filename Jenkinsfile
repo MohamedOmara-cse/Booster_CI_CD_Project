@@ -4,7 +4,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 // Get some code from a GitHub repository
-                git branch:'master', url: 'https://github.com/MohamedOmara-cse/Booster_CI_CD_Project.git'
+                git branch:'development', url: 'https://github.com/MohamedOmara-cse/Booster_CI_CD_Project.git'
             }
         }
         stage('Build') {
